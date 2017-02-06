@@ -50,8 +50,6 @@ public class WorldCreator {
 		
 			glNewList(listChunk, GL_COMPILE);
 				glBegin(GL_QUADS);
-					glEnable(GL_CULL_FACE);
-					glCullFace(GL_BACK);
 						chunk.updateRender();
 				glEnd();
 			glEndList();
@@ -65,7 +63,11 @@ public class WorldCreator {
 	
 	public void render(){
 		glCallList(listWorld);
-		glCallList(listChunk);
+		
+		glEnable(GL_CULL_FACE);
+			glCullFace(GL_BACK);
+				glCallList(listChunk);
+		glDisable(GL_CULL_FACE);
 	}
 	
 	public void renderFaceWorld(){
