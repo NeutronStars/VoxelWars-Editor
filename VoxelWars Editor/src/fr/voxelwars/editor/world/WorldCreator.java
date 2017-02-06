@@ -17,11 +17,6 @@ public class WorldCreator {
 	public WorldCreator() {
 		listWorld = glGenLists(1);
 		glNewList(listWorld, GL_COMPILE);
-			glBegin(GL_QUADS);
-			glColor4f(0.3f, 0.4f, 0.5f, 1.0f);
-			Rendering.setUpData(-10.0f, -0.01f, -10.0f, 36.0f, -0.01f, 36.0f);
-			glEnd();
-			
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 			glLineWidth(1);
 			glBegin(GL_QUADS);

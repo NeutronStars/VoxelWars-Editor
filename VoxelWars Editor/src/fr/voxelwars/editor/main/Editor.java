@@ -16,6 +16,7 @@ import fr.voxelwars.editor.input.ConsoleSender;
 import fr.voxelwars.editor.input.MouseInput;
 import fr.voxelwars.editor.maths.Vector4f;
 import fr.voxelwars.editor.maths.Vector5f;
+import fr.voxelwars.editor.world.Chunk;
 import fr.voxelwars.editor.world.WorldCreator;
 
 public class Editor {
@@ -23,7 +24,7 @@ public class Editor {
 	public static Editor getEditor;
 	
 	private int fps, tps, lfps, ltps;
-	private PlayerEntity player = new PlayerEntity(new Vector5f(8.0f, 8.0f, 8.0f, 0.0f, 0.0f));
+	private PlayerEntity player = new PlayerEntity(new Vector5f(Chunk.LENGTH_X/2.0f, Chunk.LENGTH_Y/2.0f, Chunk.LENGTH_Z/2.0f, 0.0f, 0.0f));
 	private WorldCreator creator;
 	
 	public Editor() {
